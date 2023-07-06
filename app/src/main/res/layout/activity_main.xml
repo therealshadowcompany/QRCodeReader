@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </androidx.camera.view.PreviewView>
+
+    <TextView
+        android:id="@+id/qrCodeBorderText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:text="@string/qr_code_border_text"
+        app:circularflow_viewCenter="@id/vertical_centerline"
+        app:layout_constraintBottom_toTopOf="@+id/overlayView" />
+
+    <!-- Overlay View -->
+    <View
+        android:id="@+id/overlayView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/rectangle"
+        android:layout_margin="5dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="@+id/qr_code_gen_edit_text" />
+<!--    app:layout_constraintTop_toTopOf="@+id/qr_code_gen_edit_text"-->
+
+    <EditText
+        android:id="@+id/qr_code_gen_edit_text"
+        android:layout_width="330dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="100px"
+        android:visibility="invisible"
+        android:background="@color/white"
+        android:textColor="#E6000000"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="false"
+        android:gravity="top|start"
+        android:maxLength="1024"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/qr_code_found_result_text"
+        android:layout_width="330dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="100px"
+        android:visibility="invisible"
+        android:background="@color/white"
+        android:textColor="#E6000000"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:scrollbars = "vertical"
+        android:fadeScrollbars="false"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/qr_code_generated_image"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/left_button"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="50dp"
+        android:elevation="2dp"
+        android:text="@string/upload_qr_code"
+        android:enabled="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/vertical_centerline" />
+
+    <Button
+        android:id="@+id/right_button"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="50dp"
+        android:elevation="2dp"
+        android:text="@string/create_qr_code"
+        android:enabled="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vertical_centerline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_centerline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".50" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+<!--    <usb-device vendor-id="1423" product-id="25479" class="0" subclass="0" protocol="0" />-->
+    <!-- This is the bare minimum what is needed for OTG to invoke THIS application first -->
+    <usb-device protocol="0" />
+</resources>

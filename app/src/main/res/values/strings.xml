@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Simple QR Code Reader</string>
+    <string name="clear_screen">Clear</string>
+    <string name="create_qr_code">Create QR Code</string>
+    <string name="gen_qr_code">Gen</string>
+    <string name="download_qr_code">Save</string>
+    <string name="upload_qr_code">Load QR Image</string>
+    <string name="copy_decoded_text">Copy Text</string>
+    <string name="qr_code_border_text">Ensure the QR Code within the boundaries</string>
+</resources>
